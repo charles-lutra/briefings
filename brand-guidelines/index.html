@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lutra Connect : Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #001f54;
+    --blue: #2c48ed;
+    --teal: #01c7a9;
+    --lilac: #c5c0de;
+    --lilac-pale: #eeedf4;
+    --paper: #ffffff;
+    --ink: #001f54;
+    --ink-soft: #44557a;
+    --rule: rgba(0, 31, 84, 0.10);
+    --rule-strong: rgba(0, 31, 84, 0.20);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .display { font-family: 'Manrope', system-ui, sans-serif; }
+
+  /* ----- Layout ----- */
+  .site {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0;
+    min-height: 100vh;
+  }
+
+  /* ----- Side nav ----- */
+  .sidenav {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    padding: 40px 32px;
+    border-right: 1px solid var(--rule);
+    background: var(--paper);
+    overflow-y: auto;
+  }
+  .sidenav .brand { display: block; margin-bottom: 32px; }
+  .sidenav .brand svg { width: 100%; max-width: 160px; height: auto; display: block; }
+  .sidenav .label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .sidenav nav ol { list-style: none; counter-reset: nav; }
+  .sidenav nav li { counter-increment: nav; margin: 2px 0; }
+  .sidenav nav a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 6px 0;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .sidenav nav a::before {
+    content: counter(nav, decimal-leading-zero);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .sidenav nav a:hover { color: var(--blue); }
+  .sidenav .meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ----- Main ----- */
+  main { padding: 80px 8vw 120px; max-width: 1100px; }
+
+  /* ----- Cover ----- */
+  .cover {
+    padding: 40px 0 80px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 80px;
+  }
+  .cover .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+  .cover h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+  .cover h1 strong { font-weight: 700; display: block; }
+  .cover .strap {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 300;
+    color: var(--ink-soft);
+    max-width: 36ch;
+    line-height: 1.35;
+    margin-bottom: 40px;
+  }
+  .cover .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .cover .meta-row div { font-size: 13px; color: var(--ink-soft); }
+  .cover .meta-row strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* ----- Section ----- */
+  section.guide {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: 24px;
+  }
+  section.guide:last-of-type { border-bottom: none; }
+  section.guide > .num {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  section.guide > h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 22ch;
+  }
+  section.guide > .lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin-bottom: 40px;
+  }
+  section.guide h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 48px 0 12px;
+    letter-spacing: -0.01em;
+  }
+  section.guide h3:first-of-type { margin-top: 8px; }
+  section.guide h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 28px 0 8px;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  section.guide p { max-width: 60ch; margin-bottom: 16px; color: var(--ink); }
+  section.guide p.muted { color: var(--ink-soft); }
+  section.guide p.callout {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    max-width: 32ch;
+    margin: 24px 0;
+    padding: 0 0 0 20px;
+    border-left: 3px solid var(--teal);
+  }
+
+  section.guide ul, section.guide ol { max-width: 60ch; padding-left: 20px; margin-bottom: 16px; }
+  section.guide li { margin-bottom: 8px; }
+
+  /* ----- Specimen tiles ----- */
+  .specimen-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 24px 0 40px; }
+  @media (min-width: 800px) {
+    .specimen-grid.two { grid-template-columns: 1fr 1fr; }
+    .specimen-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .specimen-grid.four { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .specimen {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .specimen .stage {
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background: var(--paper);
+  }
+  .specimen .stage.on-navy { background: var(--navy); }
+  .specimen .stage.on-lilac { background: var(--lilac-pale); }
+  .specimen .stage.on-black { background: #000; }
+  .specimen .stage svg {
+    max-width: 70%;
+    max-height: 120px;
+    height: auto;
+    width: auto;
+    display: block;
+  }
+  .specimen .stage.small svg { max-width: 96px; max-height: 80px; }
+  .specimen .caption {
+    padding: 16px 20px;
+    border-top: 1px solid var(--rule);
+    background: var(--paper);
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .specimen .caption .name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .specimen .caption .note { color: var(--ink-soft); }
+
+  /* ----- Parent & sibling ----- */
+  .pair-frame {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 64px 48px;
+    background: var(--lilac-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+    margin: 24px 0 40px;
+  }
+  .pair-frame .item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .pair-frame .item .mark-svg { display: flex; align-items: center; justify-content: center; height: 88px; }
+  .pair-frame .item .label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+  }
+  .pair-frame .divider { width: 1px; height: 100px; background: var(--rule-strong); }
+
+  /* ----- Colour swatches ----- */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 24px 0 40px;
+  }
+  .swatch { border-radius: 4px; overflow: hidden; border: 1px solid var(--rule); }
+  .swatch .chip { height: 180px; display: flex; align-items: flex-end; padding: 16px; }
+  .swatch .chip .role {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .swatch .chip.dark .role { color: rgba(255, 255, 255, 0.85); }
+  .swatch .chip.light .role { color: var(--ink-soft); }
+  .swatch .data { padding: 16px; background: var(--paper); font-size: 13px; }
+  .swatch .data .name { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+  .swatch .data .codes {
+    color: var(--ink-soft);
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+  .swatch .data .codes span { display: block; }
+  .swatch .data .use {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink);
+    font-size: 13px;
+  }
+
+  /* ----- Type specimens ----- */
+  .type-spec {
+    border: 1px solid var(--rule);
+    padding: 32px;
+    margin: 16px 0 24px;
+    border-radius: 4px;
+  }
+  .type-spec .label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .type-spec .label span:last-child { font-weight: 600; color: var(--ink); letter-spacing: 0.04em; text-transform: none; }
+  .type-spec .alpha {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .type-spec .alpha.inter { font-family: 'Inter', sans-serif; font-weight: 500; }
+  .type-spec .weights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Manrope', sans-serif;
+  }
+  .type-spec.inter-spec .weights { font-family: 'Inter', sans-serif; }
+  .type-spec .weights div { font-size: 16px; }
+  .type-spec .weights .w-300 { font-weight: 300; }
+  .type-spec .weights .w-400 { font-weight: 400; }
+  .type-spec .weights .w-500 { font-weight: 500; }
+  .type-spec .weights .w-600 { font-weight: 600; }
+  .type-spec .weights .w-700 { font-weight: 700; }
+  .type-spec .weights .w-800 { font-weight: 800; }
+
+  .hierarchy { border: 1px solid var(--rule); padding: 40px; border-radius: 4px; }
+  .hierarchy .h-display {
+    font-family: 'Manrope', sans-serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .hierarchy .h-display strong { font-weight: 700; }
+  .hierarchy .h-section {
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 32px 0 8px;
+  }
+  .hierarchy .h-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 12px;
+    max-width: 60ch;
+  }
+  .hierarchy .h-caption {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 16px;
+  }
+
+  /* ----- Voice card ----- */
+  .voice-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0 32px; }
+  @media (min-width: 800px) { .voice-grid { grid-template-columns: 1fr 1fr; } }
+  .voice-card { border: 1px solid var(--rule); padding: 24px; border-radius: 4px; }
+  .voice-card .we-are { font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .voice-card .we-arent { font-family: 'Manrope', sans-serif; font-weight: 700; color: #b13a3a; margin-bottom: 12px; }
+  .voice-card ul { padding-left: 18px; margin: 0; }
+  .voice-card li { font-size: 15px; line-height: 1.5; margin-bottom: 6px; }
+
+  /* ----- Don't grid ----- */
+  .dont-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+  .dont { border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+  .dont .stage {
+    background: var(--paper);
+    padding: 32px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dont .stage svg { max-width: 70%; max-height: 64px; height: auto; width: auto; }
+  .dont .stage.stretched svg { transform: scaleX(1.4); }
+  .dont .stage.recoloured svg { filter: hue-rotate(120deg) saturate(1.5); }
+  .dont .stage.rotated svg { transform: rotate(-12deg); }
+  .dont .stage.shadow svg { filter: drop-shadow(4px 6px 0 rgba(255, 0, 100, 0.6)); }
+  .dont .stage.low-contrast { background: #2a2a2a; }
+  .dont .stage.low-contrast svg { opacity: 0.45; }
+  .dont .stage.crowded { padding: 8px 4px; background: var(--lilac); }
+  .dont .caption {
+    padding: 12px 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  .dont .caption strong {
+    font-family: 'Manrope', sans-serif;
+    color: #b13a3a;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ----- Clearspace ----- */
+  .clearspace-figure {
+    background: var(--lilac-pale);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 48px;
+    margin: 16px 0 32px;
+    overflow: hidden;
+  }
+  .clearspace-figure svg { display: block; width: 100%; height: auto; max-width: 700px; margin: 0 auto; }
+
+  /* ----- Applications ----- */
+  .applications { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0 32px; }
+  @media (min-width: 800px) { .applications { grid-template-columns: 1fr 1fr; } }
+  .app-card { border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+  .app-card .preview {
+    padding: 40px 32px;
+    background: var(--navy);
+    color: #fff;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app-card .preview.light { background: var(--lilac-pale); color: var(--navy); }
+  .app-card .preview.blue { background: var(--blue); color: #fff; }
+  .app-card .preview .a-logo svg { height: 28px; max-width: 200px; width: auto; }
+  .app-card .preview .a-logo.mark-only svg { height: 40px; max-width: 60px; }
+  .app-card .preview .a-headline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 24px 0 12px;
+  }
+  .app-card .preview .a-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.85;
+    max-width: 36ch;
+  }
+  .app-card .preview .a-meta {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 20px;
+  }
+  .app-card .caption {
+    padding: 14px 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: var(--paper);
+  }
+
+  /* ----- Code block (CSS variables) ----- */
+  .code-block {
+    background: var(--navy);
+    color: var(--lilac-pale);
+    padding: 28px 32px;
+    border-radius: 4px;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    white-space: pre;
+  }
+  .code-block .comment { color: rgba(238, 237, 244, 0.5); }
+  .code-block .token { color: #c5c0de; }
+  .code-block .value { color: #ffffff; }
+
+  /* ----- File table ----- */
+  .file-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; font-size: 14px; }
+  .file-table th, .file-table td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .file-table th {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--lilac-pale);
+  }
+  .file-table tr:last-child td { border-bottom: none; }
+  .file-table code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    background: var(--lilac-pale);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--navy);
+  }
+
+  /* ----- Footer ----- */
+  footer.foot {
+    padding: 48px 0 0;
+    margin-top: 80px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer.foot strong {
+    font-family: 'Manrope', sans-serif;
+    color: var(--ink);
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ----- Responsive ----- */
+  @media (max-width: 900px) {
+    .site { grid-template-columns: 1fr; }
+    .sidenav {
+      position: static;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 24px;
+    }
+    .sidenav nav ol { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+    .sidenav .meta { display: none; }
+    main { padding: 48px 6vw 80px; }
+    .pair-frame .divider { display: none; }
+  }
+
+  /* ----- Reveal ----- */
+  @media (prefers-reduced-motion: no-preference) {
+    section.guide, .cover {
+      animation: rise 0.5s ease-out backwards;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+
+<aside class="sidenav">
+  <a href="#top" class="brand" aria-label="Lutra Connect">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900.80 174.98">
+  <g transform="translate(24, 24)">
+    <g transform="translate(0, -25.94) scale(1.9841)">
+      <circle cx="26" cy="32" r="22" fill="#001f54"></circle>
+      <circle cx="58" cy="32" r="22" fill="#001f54"></circle>
+    </g>
+    <g transform="translate(220.00, 0)">
+      <path d="M21.600 0L8 0L8-73.500L21.600-73.500L21.600 0ZM53.200 1.600L53.200 1.600Q46.850 1.600 42.850-0.550Q38.850-2.700 36.625-6Q34.400-9.300 33.450-12.875Q32.500-16.450 32.300-19.400Q32.100-22.350 32.100-23.700L32.100-23.700L32.100-54L45.900-54L45.900-28.500Q45.900-26.650 46.100-23.775Q46.300-20.900 47.350-18Q48.400-15.100 50.775-13.150Q53.150-11.200 57.500-11.200L57.500-11.200Q59.250-11.200 61.250-11.750Q63.250-12.300 65-13.875Q66.750-15.450 67.875-18.525Q69-21.600 69-26.600L69-26.600L76.800-22.900Q76.800-16.500 74.200-10.900Q71.600-5.300 66.375-1.850Q61.150 1.600 53.200 1.600ZM82.700 0L70.700 0L70.700-17.900L69-17.900L69-54L82.700-54L82.700 0ZM125.600-11.300L125.600 0Q120 1.050 114.625 0.925Q109.250 0.800 105.025-0.975Q100.800-2.750 98.600-6.700L98.600-6.700Q96.600-10.400 96.500-14.225Q96.400-18.050 96.400-22.900L96.400-22.900L96.400-69L110-69L110-23.700Q110-20.550 110.075-18.025Q110.150-15.500 111.100-14L111.100-14Q112.900-11.150 116.850-10.900Q120.800-10.650 125.600-11.300L125.600-11.300ZM125.600-43.500L87.200-43.500L87.200-54L125.600-54L125.600-43.500ZM147.800 0L134.100 0L134.100-54L146.100-54L146.100-40.800L144.800-42.500Q145.850-45.300 147.600-47.600Q149.350-49.900 151.900-51.400L151.900-51.400Q153.850-52.600 156.150-53.275Q158.450-53.950 160.900-54.125Q163.350-54.300 165.800-54L165.800-54L165.800-41.300Q163.550-42 160.575-41.775Q157.600-41.550 155.200-40.400L155.200-40.400Q152.800-39.300 151.150-37.475Q149.500-35.650 148.650-33.175Q147.800-30.700 147.800-27.600L147.800-27.600L147.800 0ZM186.800 1.500L186.800 1.500Q181 1.500 176.975-0.725Q172.950-2.950 170.875-6.675Q168.800-10.400 168.800-14.900L168.800-14.900Q168.800-18.650 169.950-21.750Q171.100-24.850 173.675-27.225Q176.250-29.600 180.600-31.200L180.600-31.200Q183.600-32.300 187.750-33.150Q191.900-34 197.150-34.775Q202.400-35.550 208.700-36.500L208.700-36.500L203.800-33.800Q203.800-38.600 201.500-40.850Q199.200-43.100 193.800-43.100L193.800-43.100Q190.800-43.100 187.550-41.650Q184.300-40.200 183-36.500L183-36.500L170.700-40.400Q172.750-47.100 178.400-51.300Q184.050-55.500 193.800-55.500L193.800-55.500Q200.950-55.500 206.500-53.300Q212.050-51.100 214.900-45.700L214.900-45.700Q216.500-42.700 216.800-39.700Q217.100-36.700 217.100-33L217.100-33L217.100 0L205.200 0L205.200-11.100L206.900-8.800Q202.950-3.350 198.375-0.925Q193.800 1.500 186.800 1.500ZM189.700-9.200L189.700-9.200Q193.450-9.200 196.025-10.525Q198.600-11.850 200.125-13.550Q201.650-15.250 202.200-16.400L202.200-16.400Q203.250-18.600 203.425-21.525Q203.600-24.450 203.600-26.400L203.600-26.400L207.600-25.400Q201.550-24.400 197.800-23.725Q194.050-23.050 191.750-22.500Q189.450-21.950 187.700-21.300L187.700-21.300Q185.700-20.500 184.475-19.575Q183.250-18.650 182.675-17.550Q182.100-16.450 182.100-15.100L182.100-15.100Q182.100-13.250 183.025-11.925Q183.950-10.600 185.650-9.900Q187.350-9.200 189.700-9.200Z" fill="#001f54" transform="translate(-8.00, 73.50)"></path>
+      <path d="M30.800 1.500L30.800 1.500Q22.400 1.500 16.400-2.250Q10.400-6 7.200-12.450Q4-18.900 4-27L4-27Q4-35.200 7.325-41.650Q10.650-48.100 16.700-51.800Q22.750-55.500 31-55.500L31-55.500Q40.550-55.500 47.025-50.675Q53.500-45.850 55.300-37.500L55.300-37.500L41.700-33.900Q40.500-38.100 37.525-40.450Q34.550-42.800 30.800-42.800L30.800-42.800Q26.500-42.800 23.750-40.725Q21-38.650 19.700-35.075Q18.400-31.500 18.400-27L18.400-27Q18.400-19.950 21.525-15.575Q24.650-11.200 30.800-11.200L30.800-11.200Q35.400-11.200 37.800-13.300Q40.200-15.400 41.400-19.300L41.400-19.300L55.300-16.400Q53-7.800 46.600-3.150Q40.200 1.500 30.800 1.500ZM86.100 1.500L86.100 1.500Q77.950 1.500 71.800-2.150Q65.650-5.800 62.225-12.225Q58.800-18.650 58.800-27L58.800-27Q58.800-35.450 62.300-41.875Q65.800-48.300 71.950-51.900Q78.100-55.500 86.100-55.500L86.100-55.500Q94.250-55.500 100.425-51.850Q106.600-48.200 110.050-41.775Q113.500-35.350 113.500-27L113.500-27Q113.500-18.600 110.025-12.175Q106.550-5.750 100.375-2.125Q94.200 1.500 86.100 1.500ZM86.100-11.200L86.100-11.200Q92.650-11.200 95.875-15.625Q99.100-20.050 99.100-27L99.100-27Q99.100-34.200 95.825-38.500Q92.550-42.800 86.100-42.800L86.100-42.800Q81.650-42.800 78.800-40.800Q75.950-38.800 74.575-35.250Q73.200-31.700 73.200-27L73.200-27Q73.200-19.750 76.475-15.475Q79.750-11.200 86.100-11.200ZM171.600 0L157.800 0L157.800-25.500Q157.800-27.350 157.600-30.225Q157.400-33.100 156.350-36Q155.300-38.900 152.925-40.850Q150.550-42.800 146.200-42.800L146.200-42.800Q144.450-42.800 142.450-42.250Q140.450-41.700 138.700-40.125Q136.950-38.550 135.825-35.500Q134.700-32.450 134.700-27.400L134.700-27.400L126.900-31.100Q126.900-37.500 129.500-43.100Q132.100-48.700 137.325-52.150Q142.550-55.600 150.500-55.600L150.500-55.600Q156.850-55.600 160.850-53.450Q164.850-51.300 167.075-48Q169.300-44.700 170.250-41.125Q171.200-37.550 171.400-34.600Q171.600-31.650 171.600-30.300L171.600-30.300L171.600 0ZM134.700 0L120.900 0L120.900-54L133-54L133-36.100L134.700-36.100L134.700 0ZM231.700 0L217.900 0L217.900-25.500Q217.900-27.350 217.700-30.225Q217.500-33.100 216.450-36Q215.400-38.900 213.025-40.850Q210.650-42.800 206.300-42.800L206.300-42.800Q204.550-42.800 202.550-42.250Q200.550-41.700 198.800-40.125Q197.050-38.550 195.925-35.500Q194.800-32.450 194.800-27.400L194.800-27.400L187-31.100Q187-37.500 189.600-43.100Q192.200-48.700 197.425-52.150Q202.650-55.600 210.600-55.600L210.600-55.600Q216.950-55.600 220.950-53.450Q224.950-51.300 227.175-48Q229.400-44.700 230.350-41.125Q231.300-37.550 231.500-34.600Q231.700-31.650 231.700-30.300L231.700-30.300L231.700 0ZM194.800 0L181 0L181-54L193.100-54L193.100-36.100L194.800-36.100L194.800 0ZM266.300 1.500L266.300 1.500Q258 1.500 251.675-2.075Q245.350-5.650 241.775-11.925Q238.200-18.200 238.200-26.300L238.200-26.300Q238.200-35.150 241.700-41.700Q245.200-48.250 251.350-51.875Q257.500-55.500 265.500-55.500L265.500-55.500Q274-55.500 279.950-51.500Q285.900-47.500 288.750-40.250Q291.600-33 290.750-23.200L290.750-23.200L277.300-23.200L277.300-28.200Q277.300-36.450 274.675-40.075Q272.050-43.700 266.100-43.700L266.100-43.700Q259.150-43.700 255.875-39.475Q252.600-35.250 252.600-27L252.600-27Q252.600-19.450 255.875-15.325Q259.150-11.200 265.500-11.200L265.500-11.200Q269.500-11.200 272.350-12.950Q275.200-14.700 276.700-18L276.700-18L290.300-14.100Q287.250-6.700 280.675-2.600Q274.100 1.500 266.300 1.500ZM284.200-23.200L248.400-23.200L248.400-33.300L284.200-33.300L284.200-23.200ZM322.300 1.500L322.300 1.500Q313.900 1.500 307.900-2.250Q301.900-6 298.700-12.450Q295.500-18.900 295.500-27L295.500-27Q295.500-35.200 298.825-41.650Q302.150-48.100 308.200-51.800Q314.250-55.500 322.500-55.500L322.500-55.500Q332.050-55.500 338.525-50.675Q345-45.850 346.800-37.500L346.800-37.500L333.200-33.900Q332-38.100 329.025-40.450Q326.050-42.800 322.300-42.800L322.300-42.800Q318-42.800 315.250-40.725Q312.500-38.650 311.200-35.075Q309.900-31.500 309.900-27L309.900-27Q309.900-19.950 313.025-15.575Q316.150-11.200 322.300-11.200L322.300-11.200Q326.900-11.200 329.300-13.300Q331.700-15.400 332.900-19.300L332.900-19.300L346.800-16.400Q344.500-7.800 338.100-3.150Q331.700 1.500 322.300 1.500ZM385.700-11.300L385.700 0Q380.100 1.050 374.725 0.925Q369.350 0.800 365.125-0.975Q360.900-2.750 358.700-6.700L358.700-6.700Q356.700-10.400 356.600-14.225Q356.500-18.050 356.500-22.900L356.500-22.900L356.500-69L370.100-69L370.100-23.700Q370.100-20.550 370.175-18.025Q370.250-15.500 371.200-14L371.200-14Q373-11.150 376.950-10.900Q380.900-10.650 385.700-11.300L385.700-11.300ZM385.700-43.500L347.300-43.500L347.300-54L385.700-54L385.700-43.500Z" fill="#c5c0de" transform="translate(247.10, 69.00)"></path>
+    </g>
+  </g>
+</svg>
+  </a>
+  <div class="label">Contents</div>
+  <nav aria-label="Brand guidelines">
+    <ol>
+      <li><a href="#about">About</a></li>
+      <li><a href="#essence">Brand essence</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#clearspace">Clearspace &amp; sizing</a></li>
+      <li><a href="#parent-sibling">Parent &amp; sibling</a></li>
+      <li><a href="#misuse">Misuse</a></li>
+      <li><a href="#colour">Colour</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#imagery">Imagery</a></li>
+      <li><a href="#tokens">CSS variables</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#files">Files</a></li>
+    </ol>
+  </nav>
+  <div class="meta">
+    v1.1<br>
+    May 2026<br>
+    Internal reference
+  </div>
+</aside>
+
+<main id="top">
+
+  <header class="cover">
+    <div class="eyebrow">Brand Guidelines · v1.1</div>
+    <h1 class="display">Lutra<strong>Connect</strong></h1>
+    <p class="strap display">The connective layer between optometry and ophthalmology.</p>
+    <div class="meta-row">
+      <div><strong>Issued</strong>May 2026</div>
+      <div><strong>Owner</strong>Lutra Health</div>
+      <div><strong>Audience</strong>Team, partners, design vendors</div>
+      <div><strong>Status</strong>Live</div>
+    </div>
+  </header>
+
+  <!-- 01 -->
+  <section class="guide" id="about">
+    <div class="num">01 / About</div>
+    <h2 class="display">A working reference, not a museum piece.</h2>
+    <p class="lede">This document sets out how Lutra Connect looks, sounds, and behaves in the world. It exists so that anyone producing something under the brand (a slide, a website, a sales sheet, a referral notification) gets it right the first time.</p>
+    <p>Read it once end to end. After that, use the contents list. The rules here are firm where they need to be (logo, colour, type, code) and explanatory where judgement is involved (voice, imagery). If a use case isn't covered, follow the spirit of what's here. If in doubt, ask.</p>
+  </section>
+
+  <!-- 02 -->
+  <section class="guide" id="essence">
+    <div class="num">02 / Brand essence</div>
+    <h2 class="display">What Lutra Connect is, and why it exists.</h2>
+    <p class="lede">Eye care in the UK runs on two professions that don't meet properly. Optometrists see patients first, on the high street. Ophthalmologists treat them, in NHS hospitals and private clinics. Between them sits a space that's informal, one-way, and unauditable: WhatsApp threads, faxed referrals, phone tag, favours called in between consultants who happen to know each other.</p>
+    <p>It works, until it doesn't. The cost is paid in lost information, delayed treatment, missed follow-ups, and clinical risk that nobody officially owns.</p>
+
+    <p class="callout">Lutra Connect is the connective layer that's been missing. Secure, structured, two-way, and auditable from the first message to the final outcome.</p>
+
+    <h3>A consultant in every optometry practice. Sort of.</h3>
+    <p>This is the line we lead with. Not a virtual consultant. A real one, vetted, indemnified, on the other end of a secure thread. Optometrists ask. Ophthalmologists answer. Patients get faster, better-informed care from the clinician they already trust.</p>
+
+    <h3>Compliance is the mission, not the footnote.</h3>
+    <p>Most of eye care's informal channels are regulatory liabilities sitting in clinicians' pockets. If you've shared a patient image on WhatsApp, the ICO considers that a personal data breach, and the clinician is the data controller. Connect replaces that with a secure, encrypted, audit-logged channel. Every clinician is vetted by us. Every message is attributable. Every action is defensible. This is what makes a clinical marketplace possible at all.</p>
+
+    <h3>Three users, not two.</h3>
+    <p>Connect is built for optometrists, for ophthalmologists, <em>and</em> for patients. Patients used to have two options when their optometrist flagged something: wait months on an NHS list, or pay several hundred pounds for a private hospital consultation. Connect gives them a third path. Fast, vetted specialist input delivered through the optometrist they already know, at a fraction of the cost. That third user is what turns a referral tool into an eye care pathway.</p>
+
+    <h3>One place, from referral to outcomes.</h3>
+    <p>Every interaction, every image, every piece of clinical data, every outcome, all in one place. Not because we want a moat, but because that's what defensible, longitudinal eye care actually requires. The audit trail, the clinical record, and the patient story end up in the same system.</p>
+
+    <h3>The evidence</h3>
+    <p>NHS Tayside ran the platform across 11 optometry practices and 1,570 patients over 29 months. Independently verified by NHS Tayside Business Intelligence: 8x ROI, referral-to-treatment time cut by 25%, 86% of patients listed directly for surgery, 4.7 out of 5 patient satisfaction. It works. The job now is scale.</p>
+
+    <h3>How we win</h3>
+    <p>Eye care won't be fixed by mandate. It will be fixed by tools clinicians actually want to use, and that pay for themselves on both sides of the referral. Usability and revenue. Not policy.</p>
+  </section>
+
+  <!-- 03 -->
+  <section class="guide" id="logo">
+    <div class="num">03 / Logo</div>
+    <h2 class="display">Mark, wordmark, and lockup.</h2>
+    <p class="lede">The Lutra Connect logo system is built around three elements. The mark (two overlapping navy discs). The wordmark ("lutra connect"). And the lockup, where the two sit together as the brand signature.</p>
+
+    <h3>Primary lockup</h3>
+    <p>The lockup is the default in almost every case. Use the on-light version against white or pale-lilac backgrounds. Use the on-navy version against any dark Lutra surface. Both are interchangeable in meaning; the rule is contrast.</p>
+
+    <div class="specimen-grid two">
+      <div class="specimen">
+        <div class="stage">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900.80 174.98">
+  <g transform="translate(24, 24)">
+    <g transform="translate(0, -25.94) scale(1.9841)">
+      <circle cx="26" cy="32" r="22" fill="#001f54"></circle>
+      <circle cx="58" cy="32" r="22" fill="#001f54"></circle>
+    </g>
+    <g transform="translate(220.00, 0)">
+      <path d="M21.600 0L8 0L8-73.500L21.600-73.500L21.600 0ZM53.200 1.600L53.200 1.600Q46.850 1.600 42.850-0.550Q38.850-2.700 36.625-6Q34.400-9.300 33.450-12.875Q32.500-16.450 32.300-19.400Q32.100-22.350 32.100-23.700L32.100-23.700L32.100-54L45.900-54L45.900-28.500Q45.900-26.650 46.100-23.775Q46.300-20.900 47.350-18Q48.400-15.100 50.775-13.150Q53.150-11.200 57.500-11.200L57.500-11.200Q59.250-11.200 61.250-11.750Q63.250-12.300 65-13.875Q66.750-15.450 67.875-18.525Q69-21.600 69-26.600L69-26.600L76.800-22.900Q76.800-16.500 74.200-10.900Q71.600-5.300 66.375-1.850Q61.150 1.600 53.200 1.600ZM82.700 0L70.700 0L70.700-17.900L69-17.900L69-54L82.700-54L82.700 0ZM125.600-11.300L125.600 0Q120 1.050 114.625 0.925Q109.250 0.800 105.025-0.975Q100.800-2.750 98.600-6.700L98.600-6.700Q96.600-10.400 96.500-14.225Q96.400-18.050 96.400-22.900L96.400-22.900L96.400-69L110-69L110-23.700Q110-20.550 110.075-18.025Q110.150-15.500 111.100-14L111.100-14Q112.900-11.150 116.850-10.900Q120.800-10.650 125.600-11.300L125.600-11.300ZM125.600-43.500L87.200-43.500L87.200-54L125.600-54L125.600-43.500ZM147.800 0L134.100 0L134.100-54L146.100-54L146.100-40.800L144.800-42.500Q145.850-45.300 147.600-47.600Q149.350-49.900 151.900-51.400L151.900-51.400Q153.850-52.600 156.150-53.275Q158.450-53.950 160.900-54.125Q163.350-54.300 165.800-54L165.800-54L165.800-41.300Q163.550-42 160.575-41.775Q157.600-41.550 155.200-40.400L155.200-40.400Q152.800-39.300 151.150-37.475Q149.500-35.650 148.650-33.175Q147.800-30.700 147.800-27.600L147.800-27.600L147.800 0ZM186.800 1.500L186.800 1.500Q181 1.500 176.975-0.725Q172.950-2.950 170.875-6.675Q168.800-10.400 168.800-14.900L168.800-14.900Q168.800-18.650 169.950-21.750Q171.100-24.850 173.675-27.225Q176.250-29.600 180.600-31.200L180.600-31.200Q183.600-32.300 187.750-33.150Q191.900-34 197.150-34.775Q202.400-35.550 208.700-36.500L208.700-36.500L203.800-33.800Q203.800-38.600 201.500-40.850Q199.200-43.100 193.800-43.100L193.800-43.100Q190.800-43.100 187.550-41.650Q184.300-40.200 183-36.500L183-36.500L170.700-40.400Q172.750-47.100 178.400-51.300Q184.050-55.500 193.800-55.500L193.800-55.500Q200.950-55.500 206.500-53.300Q212.050-51.100 214.900-45.700L214.900-45.700Q216.500-42.700 216.800-39.700Q217.100-36.700 217.100-33L217.100-33L217.100 0L205.200 0L205.200-11.100L206.900-8.800Q202.950-3.350 198.375-0.925Q193.800 1.500 186.800 1.500ZM189.700-9.200L189.700-9.200Q193.450-9.200 196.025-10.525Q198.600-11.850 200.125-13.550Q201.650-15.250 202.200-16.400L202.200-16.400Q203.250-18.600 203.425-21.525Q203.600-24.450 203.600-26.400L203.600-26.400L207.600-25.400Q201.550-24.400 197.800-23.725Q194.050-23.050 191.750-22.500Q189.450-21.950 187.700-21.300L187.700-21.300Q185.700-20.500 184.475-19.575Q183.250-18.650 182.675-17.550Q182.100-16.450 182.100-15.100L182.100-15.100Q182.100-13.250 183.025-11.925Q183.950-10.600 185.650-9.900Q187.350-9.200 189.700-9.200Z" fill="#001f54" transform="translate(-8.00, 73.50)"></path>
+      <path d="M30.800 1.500L30.800 1.500Q22.400 1.500 16.400-2.250Q10.400-6 7.200-12.450Q4-18.900 4-27L4-27Q4-35.200 7.325-41.650Q10.650-48.100 16.700-51.800Q22.750-55.500 31-55.500L31-55.500Q40.550-55.500 47.025-50.675Q53.500-45.850 55.300-37.500L55.300-37.500L41.700-33.900Q40.500-38.100 37.525-40.450Q34.550-42.800 30.800-42.800L30.800-42.800Q26.500-42.800 23.750-40.725Q21-38.650 19.700-35.075Q18.400-31.500 18.400-27L18.400-27Q18.400-19.950 21.525-15.575Q24.650-11.200 30.800-11.200L30.800-11.200Q35.400-11.200 37.800-13.300Q40.200-15.400 41.400-19.300L41.400-19.300L55.300-16.400Q53-7.800 46.600-3.150Q40.200 1.500 30.800 1.500ZM86.100 1.500L86.100 1.500Q77.950 1.500 71.800-2.150Q65.650-5.800 62.225-12.225Q58.800-18.650 58.800-27L58.800-27Q58.800-35.450 62.300-41.875Q65.800-48.300 71.950-51.900Q78.100-55.500 86.100-55.500L86.100-55.500Q94.250-55.500 100.425-51.850Q106.600-48.200 110.050-41.775Q113.500-35.350 113.500-27L113.500-27Q113.500-18.600 110.025-12.175Q106.550-5.750 100.375-2.125Q94.200 1.500 86.100 1.500ZM86.100-11.200L86.100-11.200Q92.650-11.200 95.875-15.625Q99.100-20.050 99.100-27L99.100-27Q99.100-34.200 95.825-38.500Q92.550-42.800 86.100-42.800L86.100-42.800Q81.650-42.800 78.800-40.800Q75.950-38.800 74.575-35.250Q73.200-31.700 73.200-27L73.200-27Q73.200-19.750 76.475-15.475Q79.750-11.200 86.100-11.200ZM171.600 0L157.800 0L157.800-25.500Q157.800-27.350 157.600-30.225Q157.400-33.100 156.350-36Q155.300-38.900 152.925-40.850Q150.550-42.800 146.200-42.800L146.200-42.800Q144.450-42.800 142.450-42.250Q140.450-41.700 138.700-40.125Q136.950-38.550 135.825-35.500Q134.700-32.450 134.700-27.400L134.700-27.400L126.900-31.100Q126.900-37.500 129.500-43.100Q132.100-48.700 137.325-52.150Q142.550-55.600 150.500-55.600L150.500-55.600Q156.850-55.600 160.850-53.450Q164.850-51.300 167.075-48Q169.300-44.700 170.250-41.125Q171.200-37.550 171.400-34.600Q171.600-31.650 171.600-30.300L171.600-30.300L171.600 0ZM134.700 0L120.900 0L120.900-54L133-54L133-36.100L134.700-36.100L134.700 0ZM231.700 0L217.900 0L217.900-25.500Q217.900-27.350 217.700-30.225Q217.500-33.100 216.450-36Q215.400-38.900 213.025-40.850Q210.650-42.800 206.300-42.800L206.300-42.800Q204.550-42.800 202.550-42.250Q200.550-41.700 198.800-40.125Q197.050-38.550 195.925-35.500Q194.800-32.450 194.800-27.400L194.800-27.400L187-31.100Q187-37.500 189.600-43.100Q192.200-48.700 197.425-52.150Q202.650-55.600 210.600-55.600L210.600-55.600Q216.950-55.600 220.950-53.450Q224.950-51.300 227.175-48Q229.400-44.700 230.350-41.125Q231.300-37.550 231.500-34.600Q231.700-31.650 231.700-30.300L231.700-30.300L231.700 0ZM194.800 0L181 0L181-54L193.100-54L193.100-36.100L194.800-36.100L194.800 0ZM266.300 1.500L266.300 1.500Q258 1.500 251.675-2.075Q245.350-5.650 241.775-11.925Q238.200-18.200 238.200-26.300L238.200-26.300Q238.200-35.150 241.700-41.700Q245.200-48.250 251.350-51.875Q257.500-55.500 265.500-55.500L265.500-55.500Q274-55.500 279.950-51.500Q285.900-47.500 288.750-40.250Q291.600-33 290.750-23.200L290.750-23.200L277.300-23.200L277.300-28.200Q277.300-36.450 274.675-40.075Q272.050-43.700 266.100-43.700L266.100-43.700Q259.150-43.700 255.875-39.475Q252.600-35.250 252.600-27L252.600-27Q252.600-19.450 255.875-15.325Q259.150-11.200 265.500-11.200L265.500-11.200Q269.500-11.200 272.350-12.950Q275.200-14.700 276.700-18L276.700-18L290.300-14.100Q287.250-6.700 280.675-2.600Q274.100 1.500 266.300 1.500ZM284.200-23.200L248.400-23.200L248.400-33.300L284.200-33.300L284.200-23.200ZM322.300 1.500L322.300 1.500Q313.900 1.500 307.900-2.250Q301.900-6 298.700-12.450Q295.500-18.900 295.500-27L295.500-27Q295.500-35.200 298.825-41.650Q302.150-48.100 308.200-51.800Q314.250-55.500 322.500-55.500L322.500-55.500Q332.050-55.500 338.525-50.675Q345-45.850 346.800-37.500L346.800-37.500L333.200-33.900Q332-38.100 329.025-40.450Q326.050-42.800 322.300-42.800L322.300-42.800Q318-42.800 315.250-40.725Q312.500-38.650 311.200-35.075Q309.900-31.500 309.900-27L309.900-27Q309.900-19.950 313.025-15.575Q316.150-11.200 322.300-11.200L322.300-11.200Q326.900-11.200 329.300-13.300Q331.700-15.400 332.900-19.300L332.900-19.300L346.800-16.400Q344.500-7.800 338.100-3.150Q331.700 1.500 322.300 1.500ZM385.700-11.300L385.700 0Q380.100 1.050 374.725 0.925Q369.350 0.800 365.125-0.975Q360.900-2.750 358.700-6.700L358.700-6.700Q356.700-10.400 356.600-14.225Q356.500-18.050 356.500-22.900L356.500-22.900L356.500-69L370.100-69L370.100-23.700Q370.100-20.550 370.175-18.025Q370.250-15.500 371.200-14L371.200-14Q373-11.150 376.950-10.900Q380.900-10.650 385.700-11.300L385.700-11.300ZM385.700-43.500L347.300-43.500L347.300-54L385.700-54L385.700-43.500Z" fill="#c5c0de" transform="translate(247.10, 69.00)"></path>
+    </g>
+  </g>
+</svg>
+        </div>
+        <div class="caption">
+          <span class="name">Primary, on light</span>
+          <span class="note">Navy + lilac</span>
+        </div>
+      </div>
+    </div>
+    <p class="muted">Full specimen variants (on-navy, mono, dot, heavy, pill, plate) are included in the asset pack. The on-light primary lockup shown here is the default and should be reached for first.</p>
+
+    <h3>Mark on its own</h3>
+    <p>The mark stands alone in small spaces: favicons, app icons, social avatars, single-line UI elements. At very small sizes, prefer the mark over the full lockup.</p>
+
+    <div class="specimen-grid four">
+      <div class="specimen">
+        <div class="stage small">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 64">
+  <circle cx="26" cy="32" r="22" fill="#001f54"></circle>
+  <circle cx="58" cy="32" r="22" fill="#001f54"></circle>
+</svg>
+        </div>
+        <div class="caption"><span class="name">Mark, on light</span></div>
+      </div>
+      <div class="specimen">
+        <div class="stage on-navy small">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 64">
+  <circle cx="26" cy="32" r="22" fill="#ffffff"></circle>
+  <circle cx="58" cy="32" r="22" fill="#ffffff"></circle>
+</svg>
+        </div>
+        <div class="caption"><span class="name">Mark, on navy</span></div>
+      </div>
+      <div class="specimen">
+        <div class="stage on-lilac small">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 64">
+  <circle cx="26" cy="32" r="22" fill="#000000"></circle>
+  <circle cx="58" cy="32" r="22" fill="#000000"></circle>
+</svg>
+        </div>
+        <div class="caption"><span class="name">Mark, mono black</span></div>
+      </div>
+      <div class="specimen">
+        <div class="stage on-black small">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 64">
+  <circle cx="26" cy="32" r="22" fill="#ffffff"></circle>
+  <circle cx="58" cy="32" r="22" fill="#ffffff"></circle>
+</svg>
+        </div>
+        <div class="caption"><span class="name">Mark, mono white</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="guide" id="clearspace">
+    <div class="num">04 / Clearspace &amp; sizing</div>
+    <h2 class="display">Give the mark room to breathe.</h2>
+    <p class="lede">Maintain a clear margin around the lockup equal to the height of one disc of the mark. Nothing competes for attention inside that margin: no text, no graphics, no other logos, no edges.</p>
+
+    <div class="clearspace-figure">
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" aria-label="Clearspace illustration">
+        <defs>
+          <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#c5c0de" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <rect x="120" y="60" width="460" height="160" fill="url(#hatch)" stroke="#001f54" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+        <rect x="180" y="100" width="340" height="80" fill="#ffffff"/>
+        <g transform="translate(200, 116)">
+          <circle cx="26" cy="32" r="22" fill="#001f54"/>
+          <circle cx="58" cy="32" r="22" fill="#001f54"/>
+        </g>
+        <text x="300" y="152" font-family="Manrope, sans-serif" font-weight="700" font-size="36" fill="#001f54">lutra</text>
+        <text x="380" y="152" font-family="Manrope, sans-serif" font-weight="700" font-size="36" fill="#c5c0de">connect</text>
+        <text x="80" y="148" font-family="Inter, sans-serif" font-size="14" fill="#44557a">X</text>
+        <line x1="100" y1="100" x2="100" y2="180" stroke="#44557a" stroke-width="1"/>
+        <line x1="96" y1="100" x2="104" y2="100" stroke="#44557a" stroke-width="1"/>
+        <line x1="96" y1="180" x2="104" y2="180" stroke="#44557a" stroke-width="1"/>
+        <text x="350" y="255" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" letter-spacing="2" fill="#44557a">X = HEIGHT OF ONE DISC. KEEP CLEAR ON ALL SIDES.</text>
+      </svg>
+    </div>
+
+    <h3>Minimum size</h3>
+    <p>For the full lockup, don't go below 96px wide on screen, or 24mm wide in print. Below that, switch to the mark or the heavy variant. The mark on its own works down to 16px (favicon territory).</p>
+  </section>
+
+  <!-- 05 -->
+  <section class="guide" id="parent-sibling">
+    <div class="num">05 / Parent &amp; sibling</div>
+    <h2 class="display">Lutra Connect is a product within Lutra Health.</h2>
+    <p class="lede">Not a separate brand. The two marks share a parentage and should always feel related when they appear together.</p>
+
+    <div class="pair-frame">
+      <div class="item">
+        <div class="mark-svg">
+          <svg width="88" height="88" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-label="Lutra Health mark">
+            <circle fill="#2c48ed" cx="8" cy="8" r="8"/>
+            <circle fill="#001f54" cx="8" cy="8" r="4.1"/>
+            <circle fill="#ffffff" cx="10.9" cy="5.4" r="2.6"/>
+          </svg>
+        </div>
+        <div class="label">Lutra Health</div>
+      </div>
+      <div class="divider"></div>
+      <div class="item">
+        <div class="mark-svg">
+          <svg width="120" height="88" viewBox="0 0 84 64" xmlns="http://www.w3.org/2000/svg" aria-label="Lutra Connect mark">
+            <circle cx="26" cy="32" r="22" fill="#001f54"/>
+            <circle cx="58" cy="32" r="22" fill="#001f54"/>
+          </svg>
+        </div>
+        <div class="label">Lutra Connect</div>
+      </div>
+    </div>
+
+    <h3>Pairing rules</h3>
+    <ul>
+      <li><strong>Never overlap the two marks.</strong> If both must appear together, separate them with at least the width of a Health mark.</li>
+      <li><strong>Never re-colour the Connect mark.</strong> Connect is always navy (or white inverse). It doesn't take on the Health mark's blue, or any other variation.</li>
+      <li><strong>Match by visual weight.</strong> If the Health mark appears at height <em>h</em>, the Connect mark appears at height <em>h</em> as well. Match optical weight, not bounding-box height.</li>
+      <li><strong>One at a time wherever possible.</strong> Connect stands alone on product surfaces. Health appears in footers, legal lines, or parent-company contexts.</li>
+    </ul>
+
+    <h3>Where each lives</h3>
+    <ul>
+      <li><strong>Lutra Connect</strong> on product surfaces, sales materials, user-facing UI, and marketing for the product itself.</li>
+      <li><strong>Lutra Health</strong> on corporate communications, investor materials, footers and legal lines on Connect surfaces, and parent-company contexts.</li>
+    </ul>
+  </section>
+
+  <!-- 06 -->
+  <section class="guide" id="misuse">
+    <div class="num">06 / Misuse</div>
+    <h2 class="display">Don't.</h2>
+    <p class="lede">The logo files supplied are the logo. Don't redraw, reweight, recolour, restructure, or restyle them. A few of the most common mistakes:</p>
+    <ul>
+      <li>Stretch or distort the proportions.</li>
+      <li>Recolour the logo outside the brand palette.</li>
+      <li>Rotate, tilt, or set the logo on an angle.</li>
+      <li>Add drop shadows, glows, or other effects.</li>
+      <li>Place the logo on a background with insufficient contrast.</li>
+      <li>Crowd the logo. Honour the clearspace rule.</li>
+    </ul>
+  </section>
+
+  <!-- 07 -->
+  <section class="guide" id="colour">
+    <div class="num">07 / Colour</div>
+    <h2 class="display">Four colours, in clear roles.</h2>
+    <p class="lede">Navy carries the brand. Blue is for action. Teal is for clarity and positive states. Lilac sits in two weights: the deeper for accents within the mark, the paler for surface tints. White is the resting state.</p>
+
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="chip dark" style="background: #001f54;"><div class="role">Primary</div></div>
+        <div class="data">
+          <div class="name">Navy</div>
+          <div class="codes">
+            <span>HEX  #001F54</span>
+            <span>RGB  0 / 31 / 84</span>
+            <span>CMYK 100 / 89 / 35 / 41</span>
+          </div>
+          <div class="use">Anchor. Headlines, body type on light, primary backgrounds, the mark.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip dark" style="background: #2c48ed;"><div class="role">Action</div></div>
+        <div class="data">
+          <div class="name">Blue</div>
+          <div class="codes">
+            <span>HEX  #2C48ED</span>
+            <span>RGB  44 / 72 / 237</span>
+            <span>CMYK 81 / 70 / 0 / 7</span>
+          </div>
+          <div class="use">Buttons, links, accents that need energy. Use sparingly.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip dark" style="background: #01c7a9;"><div class="role">Signal</div></div>
+        <div class="data">
+          <div class="name">Teal</div>
+          <div class="codes">
+            <span>HEX  #01C7A9</span>
+            <span>RGB  1 / 199 / 169</span>
+            <span>CMYK 75 / 0 / 35 / 0</span>
+          </div>
+          <div class="use">Positive states, data callouts, success messages, highlights.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip light" style="background: #c5c0de;"><div class="role">Accent lilac</div></div>
+        <div class="data">
+          <div class="name">Lilac</div>
+          <div class="codes">
+            <span>HEX  #C5C0DE</span>
+            <span>RGB  197 / 192 / 222</span>
+            <span>CMYK 14 / 16 / 0 / 5</span>
+          </div>
+          <div class="use">The "connect" wordmark colour. Soft secondary on light surfaces.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip light" style="background: #eeedf4;"><div class="role">Surface</div></div>
+        <div class="data">
+          <div class="name">Pale lilac</div>
+          <div class="codes">
+            <span>HEX  #EEEDF4</span>
+            <span>RGB  238 / 237 / 244</span>
+            <span>CMYK 4 / 4 / 0 / 1</span>
+          </div>
+          <div class="use">Backgrounds, table headers, breathing room. The Lutra Health lilac.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip light" style="background: #ffffff; border: 1px solid rgba(0,31,84,0.10);"><div class="role">Resting</div></div>
+        <div class="data">
+          <div class="name">White</div>
+          <div class="codes">
+            <span>HEX  #FFFFFF</span>
+            <span>RGB  255 / 255 / 255</span>
+            <span>CMYK 0 / 0 / 0 / 0</span>
+          </div>
+          <div class="use">Default page surface. The colour the brand sits on more often than any other.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Proportions</h3>
+    <p>Navy and white do most of the work. Lilac softens. Blue and teal are accents, used to draw the eye where it matters. As a rough guide: 60% white, 25% navy, 10% lilac, 5% blue or teal. Avoid full-bleed teal or blue surfaces; they're too loud as backgrounds.</p>
+  </section>
+
+  <!-- 08 -->
+  <section class="guide" id="typography">
+    <div class="num">08 / Typography</div>
+    <h2 class="display">Manrope for display. Inter for body.</h2>
+    <p class="lede">Two typefaces. Manrope, geometric and confident, carries headlines and short brand statements. Inter, neutral and legible, carries everything else: paragraphs, UI labels, captions, data.</p>
+
+    <div class="type-spec">
+      <div class="label">
+        <span>Display typeface</span>
+        <span>Manrope · Variable, weights 300 to 800</span>
+      </div>
+      <div class="alpha">Aa Bb Cc</div>
+      <div class="alpha" style="font-size: 32px; margin-bottom: 24px;">Connect the gap.</div>
+      <div class="weights">
+        <div class="w-300">Light 300</div>
+        <div class="w-400">Regular 400</div>
+        <div class="w-500">Medium 500</div>
+        <div class="w-600">SemiBold 600</div>
+        <div class="w-700">Bold 700</div>
+        <div class="w-800">ExtraBold 800</div>
+      </div>
+    </div>
+
+    <div class="type-spec inter-spec">
+      <div class="label">
+        <span>Body typeface</span>
+        <span>Inter · Variable, weights 400 to 600</span>
+      </div>
+      <div class="alpha inter">Aa Bb Cc</div>
+      <div class="alpha inter" style="font-size: 24px; margin-bottom: 24px; font-weight: 400;">Clear, evidence-led, plainspoken.</div>
+      <div class="weights">
+        <div class="w-400">Regular 400</div>
+        <div class="w-500">Medium 500</div>
+        <div class="w-600">SemiBold 600</div>
+      </div>
+    </div>
+
+    <h3>Hierarchy in practice</h3>
+    <div class="hierarchy">
+      <div class="h-display display">Lutra <strong>Connect</strong></div>
+      <div class="h-caption">Display · Manrope Light/Bold · 56px / 1.05</div>
+      <div class="h-section">The connective layer.</div>
+      <div class="h-caption">Section · Manrope SemiBold · 24px / 1.2</div>
+      <div class="h-body">Optometrists see patients first. Ophthalmologists treat them. Between those two points sits a referral process that loses information, delays treatment, and frustrates clinicians and patients alike. Lutra Connect closes that gap.</div>
+      <div class="h-caption">Body · Inter Regular · 16px / 1.55</div>
+    </div>
+  </section>
+
+  <!-- 09 -->
+  <section class="guide" id="voice">
+    <div class="num">09 / Voice</div>
+    <h2 class="display">How we sound.</h2>
+    <p class="lede">Candid, evidence-led, plainspoken. We name problems where we see them. We don't oversell. We talk to clinicians the way clinicians talk to each other: precise, time-respectful, allergic to fluff.</p>
+
+    <h3>Three principles</h3>
+    <ul>
+      <li><strong>Evidence over assertion.</strong> Our claims have published numbers behind them, or we don't make them.</li>
+      <li><strong>Connect, don't replace.</strong> Both sides have invested in their own systems. We make those systems talk to each other.</li>
+      <li><strong>Compliance is a design input.</strong> GDPR, NHS DSPT, MDR, ISO standards: these shape the product from day one, not bolted on at the end.</li>
+    </ul>
+
+    <h3>What we sound like, what we don't</h3>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="we-are">We sound like</div>
+        <ul>
+          <li>A senior colleague describing what works and what doesn't.</li>
+          <li>British English. Plain, unfussy, precise.</li>
+          <li>Numbers with sources behind them.</li>
+          <li>Short sentences mixed with longer ones. The occasional fragment.</li>
+          <li>"NHS Tayside cut referral time by 25%."</li>
+        </ul>
+      </div>
+      <div class="voice-card">
+        <div class="we-arent">We don't sound like</div>
+        <ul>
+          <li>A marketing department. No "transform", "unlock", "leverage", "seamless", "robust", "revolutionise".</li>
+          <li>An AI. No em dashes, no filler openers, no "Moreover".</li>
+          <li>A press release. No empty superlatives, no three-item lists when two would do.</li>
+          <li>"Dramatically improves efficiency."</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>What we are not</h3>
+    <ul>
+      <li>Not a referral management system that locks clinicians in.</li>
+      <li>Not another EPR.</li>
+      <li>Not a telehealth product.</li>
+      <li>Not a project that asks clinics to redesign their workflow before they see value.</li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section class="guide" id="imagery">
+    <div class="num">10 / Imagery</div>
+    <h2 class="display">Clinical, real, considered.</h2>
+    <p class="lede">Actual environments over stock. People at work over people smiling at cameras. Consulting rooms, high-street practices, hospital clinics. Equipment, screens, hands. The texture of the job.</p>
+
+    <h3>What good looks like</h3>
+    <ul>
+      <li>Available light. Avoid hard flash and over-staged setups.</li>
+      <li>Considered framing. Negative space is welcome.</li>
+      <li>Real people from the clinical community, where possible. Otherwise, restrained editorial-style stock.</li>
+      <li>Subjects looking at their work, not the camera.</li>
+    </ul>
+
+    <h3>What to avoid</h3>
+    <ul>
+      <li>Cliché clinical stock: gloved hands holding red apples, doctors pointing at iPads, eye-chart close-ups with rainbow gradients.</li>
+      <li>Patient-identifying imagery without explicit consent.</li>
+      <li>Heavy filters, tilt-shift effects, or AI-generated faces.</li>
+    </ul>
+  </section>
+
+  <!-- 11 -->
+  <section class="guide" id="tokens">
+    <div class="num">11 / CSS variables</div>
+    <h2 class="display">For the design system.</h2>
+    <p class="lede">Add these to the design system's tokens file under a <code>/* Lutra Connect */</code> section. They reuse the Lutra Health primitives where they exist and layer on the Connect-specific values.</p>
+
+    <h3>Colour tokens</h3>
+    <pre class="code-block"><span class="comment">/* ---------- Lutra Connect: colour ---------- */</span>
+<span class="token">--lutra-navy</span>:           <span class="value">#001f54</span>;   <span class="comment">/* primary anchor */</span>
+<span class="token">--lutra-blue</span>:           <span class="value">#2c48ed</span>;   <span class="comment">/* action */</span>
+<span class="token">--lutra-teal</span>:           <span class="value">#01c7a9</span>;   <span class="comment">/* signal */</span>
+<span class="token">--lutra-lilac</span>:          <span class="value">#eeedf4</span>;   <span class="comment">/* pale surface, shared w/ Health */</span>
+
+<span class="token">--connect-mark</span>:         <span class="value">var(--lutra-navy)</span>;
+<span class="token">--connect-mark-inverse</span>: <span class="value">#ffffff</span>;
+<span class="token">--connect-pill</span>:         <span class="value">#c5c0de</span>;   <span class="comment">/* deeper lilac, reads on white */</span>
+<span class="token">--connect-pill-on-navy</span>: <span class="value">var(--lutra-lilac)</span>;
+<span class="token">--connect-pill-fg</span>:      <span class="value">var(--lutra-navy)</span>;</pre>
+
+    <h3>Typography tokens</h3>
+    <pre class="code-block"><span class="comment">/* ---------- Lutra Connect: type ---------- */</span>
+<span class="token">--font-display</span>: <span class="value">'Manrope'</span>, system-ui, sans-serif;
+<span class="token">--font-body</span>:    <span class="value">'Inter'</span>,   system-ui, sans-serif;
+<span class="token">--font-mono</span>:    ui-monospace, <span class="value">'SF Mono'</span>, Menlo, monospace;</pre>
+
+    <h3>Usage example</h3>
+    <pre class="code-block"><span class="comment">/* Lilac pill, as used in "connect" wordmark contexts */</span>
+.connect-pill {
+  background: <span class="value">var(--connect-pill)</span>;
+  color:      <span class="value">var(--connect-pill-fg)</span>;
+  border-radius: 0.28em;
+  padding: 0.12em 0.26em 0.14em;
+  font-family: <span class="value">var(--font-display)</span>;
+  font-weight: 700;
+}</pre>
+
+    <p class="muted">Maintained alongside the Lutra Health design system. New tokens or token changes: raise an issue in the design-system repo.</p>
+  </section>
+
+  <!-- 12 -->
+  <section class="guide" id="applications">
+    <div class="num">12 / Applications</div>
+    <h2 class="display">What it looks like in the wild.</h2>
+    <p class="lede">A few worked examples to anchor the system. These aren't templates to copy verbatim. They are a sketch of how the parts come together.</p>
+    <p class="muted">Worked examples (sales one-pager hero, investor evidence slide, optometrist-facing digital ad, private-clinic outreach) are included in the asset pack and reference materials.</p>
+  </section>
+
+  <!-- 13 -->
+  <section class="guide" id="files">
+    <div class="num">13 / Files</div>
+    <h2 class="display">What's in the asset pack.</h2>
+    <p class="lede">All Lutra Connect logo assets are supplied in three formats: SVG (vector, for anything that supports it), PNG at standard resolution, and PNG at 2× for Retina or large-format use.</p>
+
+    <table class="file-table">
+      <thead>
+        <tr>
+          <th>Asset family</th>
+          <th>Use it for</th>
+          <th>Example filename</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lockup, horizontal</strong></td>
+          <td>The default brand signature. First choice in almost every case.</td>
+          <td><code>lutra-connect-lockup-horizontal-default.svg</code></td>
+        </tr>
+        <tr>
+          <td><strong>Mark</strong></td>
+          <td>Small spaces: favicons, app icons, social avatars, single-line UI.</td>
+          <td><code>lutra-connect-mark.svg</code></td>
+        </tr>
+        <tr>
+          <td><strong>Wordmark</strong></td>
+          <td>Horizontal-only contexts where the mark would feel decorative.</td>
+          <td><code>lutra-connect-wordmark-default.svg</code></td>
+        </tr>
+        <tr>
+          <td><strong>On-navy variants</strong></td>
+          <td>Any asset placed on a navy or dark Lutra background.</td>
+          <td><code>...-onnavy.svg</code></td>
+        </tr>
+        <tr>
+          <td><strong>Mono black / white</strong></td>
+          <td>Single-ink reproduction; constrained or contrast-limited surfaces.</td>
+          <td><code>...-mono-black.svg</code> · <code>...-mono-white.svg</code></td>
+        </tr>
+        <tr>
+          <td><strong>Dot · Heavy · Pill · Plate</strong></td>
+          <td>Tactical lockup variants. Use sparingly, see Section 03.</td>
+          <td><code>...-dot.svg</code> · <code>...-heavy.svg</code> · <code>...-pill.svg</code> · <code>...-plate.svg</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Folder structure</h3>
+    <ul>
+      <li><code>/svg/</code>: vector files, use everywhere they're supported.</li>
+      <li><code>/png/</code>: raster PNG at ~1200px wide, transparent background.</li>
+      <li><code>/png@2x/</code>: same files at 2× for high-DPI displays and large print.</li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <div>
+      <strong>Lutra Connect Brand Guidelines</strong>
+      Version 1.1 · May 2026
+    </div>
+    <div>
+      <strong>Internal use</strong>
+      For questions, contact the Lutra team.
+    </div>
+  </footer>
+
+</main>
+</div>
+</body>
+</html>
